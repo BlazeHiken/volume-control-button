@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         if (isButtonActive) {
             toggleButton.setText(R.string.disable_button)
             statusText.setText(R.string.status_active)
-            statusText.setTextColor(getColor(R.color.teal_200)) // Active color
+            statusText.setTextColor(android.graphics.Color.parseColor("#4CAF50")) // Active color (Green)
         } else {
             toggleButton.setText(R.string.enable_button)
             statusText.setText(R.string.status_inactive)
