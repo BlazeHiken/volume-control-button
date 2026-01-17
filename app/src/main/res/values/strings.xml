@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">VolumeButton</string>
+    <string name="show_volume">Show Volume</string>
+</resources>
