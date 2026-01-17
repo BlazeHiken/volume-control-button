@@ -12,12 +12,14 @@ class MainActivity : AppCompatActivity() {
 
     private var isButtonActive = false
     private lateinit var toggleButton: Button
+    private lateinit var statusText: android.widget.TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        toggleButton = Button(this)
-        setContentView(toggleButton)
+        toggleButton = findViewById(R.id.toggleButton)
+        statusText = findViewById(R.id.statusText)
 
         toggleButton.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&
@@ -65,10 +67,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateButtonText(disabled: Boolean = false) {
-        toggleButton.text = when {
-            disabled -> "Enable overlay permission first"
-            isButtonActive -> "Disable Floating Button"
-            else -> "Enable Floating Button"
+        if (disabled) {
+            toggleButton.setText(R.string.permission_required)
+            statusText.setText(R.string.status_inactive)
+            toggleButton.isEnabled = true 
+            return
         }
+
+        if (isButtonActive) {
+            toggleButton.setText(R.string.disable_button)
+            statusText.setText(R.string.status_active)
+            statusText.setTextColor(getColor(R.color.teal_200)) // Active color
+        } else {
+            toggleButton.setText(R.string.enable_button)
+            statusText.setText(R.string.status_inactive)
+            statusText.setTextColor(getColor(android.R.color.darker_gray))
+        }
+        toggleButton.isEnabled = true
     }
 }

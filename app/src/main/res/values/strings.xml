@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">VolumeButton</string>
     <string name="show_volume">Show Volume</string>
+    <string name="app_title">Volume Button</string>
+    <string name="status_active">Status: Active</string>
+    <string name="status_inactive">Status: Inactive</string>
+    <string name="enable_button">Enable Floating Button</string>
+    <string name="disable_button">Disable Floating Button</string>
+    <string name="permission_required">Enable overlay permission first</string>
+    <string name="instructions">Tap the button below to show the floating volume control.</string>
 </resources>
