@@ -36,7 +36,7 @@
             android:textSize="18sp"
             android:textColor="#666666"
             android:textStyle="bold"/>
-            
+
     </LinearLayout>
 
     <!-- Instructions -->
@@ -58,6 +58,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
-        android:backgroundTint="@color/purple_500"/>
+        android:background="@drawable/purple_button_background" />
+
 
 </LinearLayout>
